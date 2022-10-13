@@ -1787,7 +1787,7 @@
 //   <e> Host [Driver_USBH0]
 //   <i> Configuration settings for Driver_USBH0 in component ::Drivers:USB Host
 
-#define RTE_USB_OTG_FS_HOST             1
+#define RTE_USB_OTG_FS_HOST             0
 
 //     <e> VBUS Power On/Off Pin
 //     <i> Configure Pin for driving VBUS
