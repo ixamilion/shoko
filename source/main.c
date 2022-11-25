@@ -1,25 +1,23 @@
 #include "RTE_Components.h"
 #include CMSIS_device_header
 
-#include <stdint.h>
+#include "bsp.h"
 
 int main(void)
 {
-    // PC13
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
-    GPIO_InitTypeDef PC13;
-    PC13.GPIO_Pin   = GPIO_Pin_13;
-    PC13.GPIO_Mode  = GPIO_Mode_Out_PP;
-    PC13.GPIO_Speed = GPIO_Speed_10MHz;
-    GPIO_Init(GPIOC, &PC13);
+    bsp_time_init();
+    bsp_led_init();
     
-    volatile int fake = 1;
-    while (fake)
+    //bsp_btn_init();
+    //bsp_adc_init();
+
+    while (1)
     {
-        GPIO_WriteBit(GPIOC, GPIO_Pin_13, Bit_RESET);
-        fake += 1;
-        fake -=1;
-        GPIO_WriteBit(GPIOC, GPIO_Pin_13, Bit_SET);
+        __WFI();
+        bsp_led_tick();
+        
+        //bsp_btn_tick();
+        //bsp_adc_tick();
     }
 
     return (-1);
