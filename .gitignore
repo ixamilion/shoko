@@ -1,2 +1,5 @@
 /keil_proj/Objects/*
 /keil_proj/Listings/*
+/keil_proj/JLinkLog.txt
+/keil_proj/DebugConfig/proto_STM32F103CB_1.0.0.dbgconf
+*.uvguix.*
