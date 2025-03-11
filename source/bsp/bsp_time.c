@@ -13,7 +13,7 @@ void SysTick_Handler(void)
 void bsp_time_init(void)
 {
     NVIC_EnableIRQ(SysTick_IRQn);
-    SysTick_Config(1000);
+    SysTick_Config(72000);
 }
 
 ///
